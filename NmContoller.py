@@ -92,9 +92,9 @@ class NmController:
         action = command.action
 
         if action is Action.RDW_ENABLE:
-            os.system("/usr/bin/tlp-rdw enable")
+            os.system("sudo /usr/bin/tlp-rdw enable")
         elif action is Action.RDW_DISABLE:
-            os.system("/usr/bin/tlp-rdw disable")
+            os.system("sudo /usr/bin/tlp-rdw disable")
         elif action is Action.NM_ENABLE:
             NetworkManager.NetworkManager.Enable(True)
         elif action is Action.NM_DISABLE:

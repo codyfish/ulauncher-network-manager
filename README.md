@@ -13,6 +13,15 @@ Install the dependencies using pip (python 3) or your systems package manager
 
 * python-networkmanager
 
+###Privileges
+
+In order to use tlp-rdw, one must add 
+
+`<username> ALL=NOPASSWD:/usr/bin/tlp-rdw`
+
+to one's sudoers file using `visudo`. DO NOT EDIT YOUR `sudoers` file without `visudo`!
+
+
 ##Usage
 
 | command |  | action |
