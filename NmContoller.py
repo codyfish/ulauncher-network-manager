@@ -1,13 +1,10 @@
+import os
+from enum import Enum
+
+import NetworkManager
 from ulauncher.api.shared.action.ExtensionCustomAction import ExtensionCustomAction
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
-
-import NetworkManager
-from enum import Enum
-import subprocess
-import os
-
-# <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 
 class Action(Enum):
@@ -95,11 +92,9 @@ class NmController:
         action = command.action
 
         if action is Action.RDW_ENABLE:
-            subprocess.run("tlp-rdw enable")
-            pass
+            os.system("/usr/bin/tlp-rdw enable")
         elif action is Action.RDW_DISABLE:
-            subprocess.run("tlp-rdw disable")
-            pass
+            os.system("/usr/bin/tlp-rdw disable")
         elif action is Action.NM_ENABLE:
             NetworkManager.NetworkManager.Enable(True)
         elif action is Action.NM_DISABLE:
