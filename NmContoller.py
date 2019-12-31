@@ -24,18 +24,6 @@ class NmCommand:
 
 
 COMMANDS = {
-    Action.RDW_ENABLE: ExtensionResultItem(icon='images/radio-checked-symbolic.svg',
-                                           name="rdwe",
-                                           description="rdw enable",
-                                           on_enter=ExtensionCustomAction(
-                                               data=NmCommand(Action.RDW_ENABLE),
-                                               keep_app_open=False)),
-    Action.RDW_DISABLE: ExtensionResultItem(icon='images/radio-symbolic.svg',
-                                            name="rdwd",
-                                            description="rdw disbale",
-                                            on_enter=ExtensionCustomAction(
-                                                data=NmCommand(Action.RDW_DISABLE),
-                                                keep_app_open=False)),
     Action.NM_ENABLE: ExtensionResultItem(icon='images/network-wireless-symbolic.svg',
                                           name="nme",
                                           description="nm enable",
@@ -48,6 +36,19 @@ COMMANDS = {
                                            on_enter=ExtensionCustomAction(
                                                data=NmCommand(Action.NM_DISABLE),
                                                keep_app_open=False)),
+    Action.RDW_ENABLE: ExtensionResultItem(icon='images/radio-checked-symbolic.svg',
+                                           name="rdwe",
+                                           description="tlp-rdw enable",
+                                           on_enter=ExtensionCustomAction(
+                                               data=NmCommand(Action.RDW_ENABLE),
+                                               keep_app_open=False)),
+    Action.RDW_DISABLE: ExtensionResultItem(icon='images/radio-symbolic.svg',
+                                            name="tlp-rdwd",
+                                            description="rdw disbale",
+                                            on_enter=ExtensionCustomAction(
+                                                data=NmCommand(Action.RDW_DISABLE),
+                                                keep_app_open=False)),
+
 }
 
 COMMAND_NAMES = {
@@ -86,7 +87,7 @@ class NmController:
                                                                     keep_app_open=False)) for connection in
                  query_results]
 
-        return RenderResultListAction([value for key, value in COMMANDS.items() if key in command_results] + items)
+        return RenderResultListAction(items + [value for key, value in COMMANDS.items() if key in command_results])
 
     def execute(self, command):
         action = command.action
