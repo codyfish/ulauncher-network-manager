@@ -13,7 +13,7 @@ Install the dependencies using pip (python 3) or your systems package manager
 
 * python-networkmanager
 
-###Privileges
+### Privileges
 
 In order to use tlp-rdw, one must add 
 
@@ -22,7 +22,7 @@ In order to use tlp-rdw, one must add
 to one's sudoers file using `visudo`. DO NOT EDIT YOUR `sudoers` file without `visudo`!
 
 
-##Usage
+## Usage
 
 | command |  | action |
 |---------|----------|--------|
@@ -32,11 +32,11 @@ to one's sudoers file using `visudo`. DO NOT EDIT YOUR `sudoers` file without `v
 | `nm rdwd` | | disable networking hardware using tlp-rdw |
 | `nm <id>` | | enable connection <id> |
 
-##Icons
+## Icons
 
 Icons from https://github.com/horst3180/arc-icon-theme
 
-##Disclaimer
+## Disclaimer
 
 This is an extension I made for myself, at the moment it still might be very buggy or not work in the expected way.
 
